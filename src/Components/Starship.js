@@ -1,41 +1,40 @@
-import { render } from "@testing-library/react";
-import { useEffect, useState } from "react"; 
 
+import { useEffect, useState } from "react"; 
+import axios from "axios";
 
 
 function Starship() {
 
-    const[Starship, SetStarship]= useState({Starship: []});
-    const setStarshipList=()=>{
-        fetch("https://swapi.dev/api/starships/")
-        .then(response=>{
-            return response.json()
-        })
-        .then(data=>{
-            SetStarship(data)
-            
-        })
-    }
-useEffect(()=>{
-    setStarshipList()
+    const[Starship, SetStarship]= useState([]);
+
+    useEffect(()=>{
+
     
-    },[])
+        axios
+        .get("https://swapi.dev/api/starships/?format=json#")
+        .then((res)=>{
+            console.log(res)
+            SetStarship(res.data.results)
+        })
+        .catch(err=>{
+            console.log(err)
+            
+        });
+    },[]);
+
     
         return (
       
-    <div className="Starship">
-        {Starship.length>0 &&(
+    <div className="container">
+        
+        <div className="Starship">
             <ul>
-                {SetStarship.map(S =>(
-                    <li key={S.id}>{S.results.name}</li>
-                ))}
+               {Starship.map(starship => <p className="box" key={starship.name}>{starship.name}{starship.crew}</p>
+               )}
     
             </ul>
-        )}
-        
-    <div>
-            <h1>test</h1>
-    </div>  
+            </div>
+         
     </div>
       );
 }

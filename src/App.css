@@ -1,0 +1,60 @@
+p{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    flex-wrap: wrap;
+    box-shadow: 10px 10px 10px rgb(128, 115, 0);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 10px 10px 10px rgb(0, 9, 128);
+    width: 300px;
+    height: 100px;
+    background-color: cadetblue;
+    
+    
+    
+}
+.Navdiv{
+    
+    border: solid;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 100%;
+    width: 25%;
+    text-decoration: none;
+    background-color: cadetblue;
+    box-shadow: 05px 05px 05px yellow ;
+    
+}
+/* .Navdiv2{
+    background-color: black;
+    border-radius: 100%;
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+    width: 10px;
+} */
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contactDiv{
+    border: 10px solid;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+
+}
+.AboutUs{
+    border:  10px solid;
+    height: fit-content;
+    margin: 10px;
+    border-radius: 10px;
+}
+body{
+    background-image: url('https://wallpaperaccess.com/full/6172760.png');
+}
